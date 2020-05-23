@@ -15,7 +15,7 @@ Gemfile.lock
 # Used by dotenv library to load environment variables.
 # .env
 
-## Specific to RubyMotion:
+## Specific to RubyMotion
 .dat*
 .repl_history
 build/
