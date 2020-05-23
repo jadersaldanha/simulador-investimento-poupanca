@@ -1,4 +1,5 @@
 ### Ruby ###
+Gemfile.lock
 *.gem
 *.rbc
 /.config
