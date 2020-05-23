@@ -19,10 +19,10 @@ jobs: # a collection of steps
           command: bundle -v
 
       # Restore bundle cache
-      - restore_cache:
-          keys:
-            - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
-            - rails-demo-bundle-v2-
+      # - restore_cache:
+      #     keys:
+      #       - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+      #       - rails-demo-bundle-v2-
 
       - run:
           name: Bundle Install
