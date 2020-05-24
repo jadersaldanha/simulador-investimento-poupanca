@@ -50,15 +50,17 @@ jobs:
           command: bundle install --path vendor/bundle
       - run: 
           name: Execute all features scenarios (except @wip tags) on Goole Chrome browser
-          command: bundle exec cucumber --profile ci_report --profile not_wip
-      - store_test_results:
-          path: ~/cucumber/junit.xml
-      - store_artifacts:
-          path: ~/cucumber/junit.xml
+          command: bundle exec cucumber --format pretty --format html --out=test_results/features_report.html
+            
+      # Save test results for timing analysis
       - store_test_results:
           path: ~/HTTParty/test_results
       - store_artifacts:
-          path: ~/HTTParty/test_results    
+          path: ~/HTTParty/test_results
+      - store_test_results:
+          path: ~/cucumber/junit.xml
+      - store_artifacts:
+          path: ~/cucumber/junit.xml   
 
 workflows:
   version: 2
