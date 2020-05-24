@@ -3,22 +3,48 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4-node
+    working_directory: ~/simulador-investimento-poupanca
     steps:
       - checkout
+      - save_cache:
+          key: grt-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/simulador-investimento-poupanca
 
   bundle_dependencies:
-    working_directory: ~/simulador-investimento-poupanca
+    working_directory: ~/simulador-investimento-poupanca 
     docker:
       - image: circleci/ruby:2.4-node
     steps:
+      - restore_cache:
+          keys:
+            - grt-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          keys:
+            - grt-bundle-{{ .Branch }}
       - run: 
           name: Bundle install
           command: bundle install --path vendor/bundle
+      - save_cache:
+          key: grt-bundle-{{ .Branch }}-{{ epoch }}
+          paths:
+            - ~/simulador-investimento-poupanca/vendor/bundle
+      - save_cache:
+          key: grt-bundle-{{ .Branch }}
+          paths: 
+            - ~/simulador-investimento-poupanca/vendor/bundle
 
-  chrome_test:
+ chrome_test:
+    working_directory: ~/simulador-investimento-poupanca 
     docker:
       - image: circleci/ruby:latest-browsers
     steps:
+      - restore_cache:
+          keys:
+            - grt-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          keys:
+            - grt-bundle-{{ .Branch }}
       - run: 
           name: Bundle install
           command: bundle install --path vendor/bundle
@@ -29,11 +55,10 @@ jobs:
           path: ~/cucumber/junit.xml
       - store_artifacts:
           path: ~/cucumber/junit.xml
-      # Save test results for timing analysis
       - store_test_results:
           path: ~/HTTParty/test_results
       - store_artifacts:
-          path: ~/HTTParty/test_results
+          path: ~/HTTParty/test_results    
 
 workflows:
   version: 2
