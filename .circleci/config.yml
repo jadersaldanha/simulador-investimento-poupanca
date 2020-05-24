@@ -34,7 +34,8 @@ jobs: # a collection of steps
 
       - run:
           name: Giving permissons to chromedriver to move
-          command: chmod +x chromedriver​ || sudo mv chromedriver /usr/local/bin
+          command: mv /home/circleci/HTTParty/node_modules/chromedriver/lib/chromedriver/chromedriver /usr/local/bin
+
 
       # Store bundle cache
       - save_cache:
