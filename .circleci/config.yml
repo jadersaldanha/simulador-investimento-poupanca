@@ -52,7 +52,6 @@ workflows:
       - chrome_test:
           requires:
             - bundle_dependencies
-            - code_analyzer
       # - firefox_test:
       #     requires:
       #       - bundle_dependencies
