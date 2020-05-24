@@ -33,12 +33,12 @@ jobs: # a collection of steps
           command: npm install chromedriver
 
       - run:
-        name: Giving permissons to chromedriver to move
-        command: chmod +x chromedriver​
+          name: Giving permissons to chromedriver to move
+          command: chmod +x chromedriver​
 
       - run:
-        name: Putting Chrome in Path
-        command: sudo mv chromedriver /usr/local/bin
+          name: Putting Chrome in Path
+          command: sudo mv chromedriver /usr/local/bin
 
       # Store bundle cache
       - save_cache:
