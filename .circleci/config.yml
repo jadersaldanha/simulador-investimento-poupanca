@@ -7,17 +7,15 @@ jobs:
       - checkout
 
   bundle_dependencies:
-    
+    working_directory: ~/simulador-investimento-poupanca
     docker:
       - image: circleci/ruby:2.4-node
     steps:
-  
       - run: 
           name: Bundle install
           command: bundle install --path vendor/bundle
 
   chrome_test:
-  
     docker:
       - image: circleci/ruby:latest-browsers
     steps:
@@ -51,9 +49,6 @@ workflows:
       - bundle_dependencies:
           requires: 
             - build
-      - code_analyzer:
-          requires:
-            - bundle_dependencies
       - chrome_test:
           requires:
             - bundle_dependencies
