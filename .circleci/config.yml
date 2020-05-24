@@ -32,6 +32,10 @@ jobs: # a collection of steps
           name: Downloading chromedriver
           command: npm install chromedriver
 
+      - run:
+        name: Putting Chrome in Path
+        command: chmod +x chromedriver​ || sudo mv chromedriver /usr/local/bin
+
       # Store bundle cache
       - save_cache:
           key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
