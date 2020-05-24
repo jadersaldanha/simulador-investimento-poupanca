@@ -25,7 +25,7 @@ Projeto de automacao de testes Web e de serviços para o simulador de investimen
 
 * In command line
 	```
-	$ cucumber -t @test_name
+	$ cucumber -t @test_namee
 	```
 
 ### Resources
