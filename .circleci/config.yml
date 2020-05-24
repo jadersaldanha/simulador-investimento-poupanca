@@ -57,9 +57,9 @@ jobs:
             
       # Save test results for timing analysis
       - store_test_results:
-          path: ~/HTTParty/test_results
+          path: ~/simulador-investimento-poupanca/test_results
       - store_artifacts:
-          path: ~/HTTParty/test_results 
+          path: ~/simulador-investimento-poupanca/test_results 
 
 workflows:
   version: 2
