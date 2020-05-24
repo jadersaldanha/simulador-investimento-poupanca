@@ -60,14 +60,6 @@ jobs:
           path: ~/HTTParty/test_results    
 
 workflows:
-  version: 2
-  build_and_test:
-#    triggers:
-#      - schedule:
-#          cron: "* 4 * * *"
-#          filters:
-#            branches:
-#              only: master
     jobs:
       - build
       - bundle_dependencies:
@@ -76,7 +68,4 @@ workflows:
       - chrome_test:
           requires:
             - bundle_dependencies
-      # - firefox_test:
-      #     requires:
-      #       - bundle_dependencies
-      #       - code_analyzer
+ 
