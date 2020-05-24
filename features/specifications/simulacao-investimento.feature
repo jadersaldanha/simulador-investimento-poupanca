@@ -21,13 +21,12 @@ Funcionalidade: Simulação de investimento em Poupança.
     @simulacao_sucesso
     Cenario: Simulacao de investimento com o preenchimento de campos corretos
         Dado que estou na pagina de simulacao de investimento em poupanca
-        Quando informo o perfil "para voce"
-        E preencho o valor de aplicacao em "1000"
-        E preencho a quantidade que desejo poupar em "100,00"
+        E preencho o valor de aplicacao em "10000"
+        E preencho a quantidade que desejo poupar em "10000"
         E preencho o tempo que desejo poupar em "12"
         E seleciono meses
         E clico em Simular
-        Entao devo ver a mensagem "Em 12 meses você terá guardado" o valor de "2.233"
+        Entao devo ver a mensagem "Em 12 meses você terá guardado" o valor de "R$ 1.314"
 
     @simulacao_semsucesso
     Cenario: Simulacao de investimento com valor inferior a 20,00

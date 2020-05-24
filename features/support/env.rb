@@ -10,7 +10,7 @@ Capybara.configure do |config|
   # @driver = :selenium_chrome
   # config.default_driver = @driver
   config.default_max_wait_time = 15
-    #  page.current_window.maximize
+    # page.current_window.maximize
   config.app_host = "https://www.sicredi.com.br/html/ferramenta"
   config.default_driver = BROWSER = (ENV['DRIVER'] || 'chrome').to_sym
 end

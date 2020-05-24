@@ -2,43 +2,43 @@ Dado("que estou na pagina de simulacao de investimento em poupanca") do
     visit '/simulador-investimento-poupanca'
   end
   
-  Quando("informo o perfil {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
   Quando("preencho o valor de aplicacao em {string}") do |string|
-    # fill_in 'valorAplicar', with: string
+    fill_in 'valorAplicar', with: string
   end
   
   Quando("preencho a quantidade que desejo poupar em {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in 'valorInvestir', with: string
   end
   
   Quando("preencho o tempo que desejo poupar em {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in 'tempo', with: string
   end
   
   Quando("seleciono meses") do
-    pending # Write code here that turns the phrase above into concrete actions
+    # pending
   end
   
   Quando("clico em Simular") do
-    pending # Write code here that turns the phrase above into concrete actions
+    find('ul > li.simular > button', visible: false).click
   end
   
-  Entao("devo ver a mensagem {string} o valor de {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+  Entao("devo ver a mensagem {string} o valor de {string}") do |expected_text, string|
+    element = find('div.blocoResultadoSimulacao > span.texto', text: 'Em 12 meses você terá guardado')
+    element.text.include? expected_text
+    element.text.include? string
   end
   
   Dado("preencho o valor de aplicacao em {string} no valor aplicado") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in 'valorAplicar', with: string
   end
   
   Dado("preencho {string} no valor que quero poupar todo mes") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in 'valorInvestir', with: string
   end
   
   Entao("a mensagem {string} deve aparecer na tela") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+    # pending # valorAplicar-error Write code here that turns the phrase above into concrete actions
+    element = find('#valorAplicar-error', visible: false)
+    element.text.include? string
+end
   
