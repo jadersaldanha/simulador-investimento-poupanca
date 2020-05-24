@@ -25,8 +25,12 @@ Projeto de automacao de testes Web e de serviços para o simulador de investimen
 
 * In command line
 	```
-	$ cucumber -t @test_namee
+	$ cucumber -t @test_name
 	```
+
+Circle CI:
+
+https://app.circleci.com/pipelines/github/jadersaldanha/simulador-investimento-poupanca
 
 ### Resources
 ##### [SeleniumHQ](http://www.seleniumhq.org/docs/)
