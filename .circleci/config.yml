@@ -34,8 +34,7 @@ jobs: # a collection of steps
 
       - run:
           name: Giving permissons to chromedriver to move
-          command: chmod +x chromedriver​
-          command: sudo mv chromedriver /usr/local/bin
+          command: chmod +x chromedriver​ || sudo mv chromedriver /usr/local/bin
 
       # Store bundle cache
       - save_cache:
