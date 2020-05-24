@@ -35,9 +35,6 @@ jobs: # a collection of steps
       - run:
           name: Giving permissons to chromedriver to move
           command: chmod +x chromedriver​
-
-      - run:
-          name: Putting Chrome in Path
           command: sudo mv chromedriver /usr/local/bin
 
       # Store bundle cache
