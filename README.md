@@ -3,32 +3,41 @@ Projeto de automacao de testes Web e de serviços para o simulador de investimen
 
 ### Setup
 
-1. Global Dependencies
+1. Dependencias globais
     * Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-    * Or Install Ruby with [Homebrew](http://brew.sh/)
+    * Ou Install Ruby with [Homebrew](http://brew.sh/)
     ```
     $ brew install ruby
     ```
     
-    * Install bundler (Sudo may be necessary)
+    * Install bundler
     ```
     $ gem install bundler
     ```
 
-2. Dependencies
-	* Install packages (Use sudo if necessary)
+2. Dependencias
+	* Instalacao de pacotes
 	```
 	$ bundle install
 	```
 
-### Running Tests
 
-* In command line
+### Cenarios mapeados
+
+https://github.com/jadersaldanha/simulador-investimento-poupanca/blob/master/features/specifications/simulacao-investimento.feature
+
+
+### Rodando os testes
+
+* Pela linha de comando
 	```
+    (Para rodar todos os testes)
+    $ cucumber
+    (Para rodar somente um teste)
 	$ cucumber -t @test_name
 	```
 
-Circle CI:
+### Pode ser executado e testado no Circle CI:
 
 https://app.circleci.com/pipelines/github/jadersaldanha/simulador-investimento-poupanca
 
