@@ -41,6 +41,8 @@ jobs:
     docker:
       - image: cimg/ruby:2.7-browsers
     steps:
+      - browser-tools/install-browser-tools
+      - checkout
       - restore_cache:
           keys:
             - grt-repo-{{ .Environment.CIRCLE_SHA1 }}
