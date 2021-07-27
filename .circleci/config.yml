@@ -39,7 +39,7 @@ jobs:
   chrome_test:
     working_directory: ~/simulador-investimento-poupanca
     docker:
-      - image: circleci/ruby:latest-browsers
+      - image: circleci/ruby:2.4-node
     steps:
       - restore_cache:
           keys:
@@ -48,9 +48,12 @@ jobs:
           keys:
             - grt-bundle-{{ .Branch }}
       - run:
+          name: Bundle install
+          command: bundle install --path vendor/bundle
+      - run:
           name: Run Cucumber
           command: |
-            cucumber --format pretty --format html --out=test_results/features_report.html
+            bundle exec cucumber --format pretty --format html --out=test_results/features_report.html
 
       # Save test results for timing analysis
       - store_test_results:
