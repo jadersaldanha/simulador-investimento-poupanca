@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4-node
+      - image: cimg/ruby:3.0.2-node
         environment:
           RAILS_ENV: test
     working_directory: ~/simulador-investimento-poupanca
@@ -16,7 +16,7 @@ jobs:
   bundle_dependencies:
     working_directory: ~/simulador-investimento-poupanca
     docker:
-      - image: circleci/ruby:2.4-node
+      - image: ccimg/ruby:3.0.2-node
     steps:
       - restore_cache:
           keys:
@@ -39,7 +39,7 @@ jobs:
   chrome_test:
     working_directory: ~/simulador-investimento-poupanca
     docker:
-      - image: circleci/ruby:latest-browsers
+      - image: cimg/ruby:2.7-browsers
     steps:
       - restore_cache:
           keys:
