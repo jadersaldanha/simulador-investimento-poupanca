@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Run Cucumber
           command: |
-            bundle exec cucumber --format pretty --format html --out=test_results/features_report.html
+            cucumber --format pretty --format html --out=test_results/features_report.html
 
       # Save test results for timing analysis
       - store_test_results:
