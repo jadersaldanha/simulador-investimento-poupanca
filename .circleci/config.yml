@@ -39,7 +39,7 @@ jobs:
   chrome_test:
     working_directory: ~/simulador-investimento-poupanca
     docker:
-      - image: levlozhkin/ruby-chromedriver
+      - image: cimg/ruby:2.7-browsers
     steps:
       - restore_cache:
           keys:
