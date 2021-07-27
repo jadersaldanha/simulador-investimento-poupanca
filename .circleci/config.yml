@@ -48,9 +48,6 @@ jobs:
           keys:
             - grt-bundle-{{ .Branch }}
       - run:
-          name: Bundle install
-          command: bundle install --path vendor/bundle
-      - run:
           name: Run Cucumber
           command: |
             bundle exec cucumber --format pretty --format html --out=test_results/features_report.html
